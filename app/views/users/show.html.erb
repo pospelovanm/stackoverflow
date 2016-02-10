@@ -1,0 +1,22 @@
+<div class="container">
+
+  <div id="userDataTab">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <%= link_to "Profile", members_profile_path(:id => @user.id), :remote => true %>
+      </li>
+      <li>
+        <%= link_to "User Questions", members_display_questions_path(:user_id => @user.id), :remote => true %>
+      </li>
+      <li><%= link_to "User Answers", members_display_answers_path(:user_id => @user.id), :remote => true %></li>
+    </ul>
+  </div>
+  <div class="row">
+    <div id="userData" class="span9">
+      <%= render :partial => "members/profile" %>
+    </div>
+  </div>
+
+</div>
+
+

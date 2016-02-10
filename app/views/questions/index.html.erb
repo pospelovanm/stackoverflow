@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Questions</h2>
+
+  <br/>
+  <% @questions.each do | question | %>
+      <div class="row">
+        <div class="col-xs-8">
+          <%= link_to question.title, question_path(question) %><br/>
+          <%= truncate(question.contentQuestion, :length => 80) %><br/>
+        </div>
+        <div class="col-xs-2">
+          <p style="color: blue; text-align: right; margin-right: 500px;"><%= link_to question.user.login, :controller => 'users', :action => 'show', :id => question.user_id %></p>
+        </div>
+        <div class="col-xs-2">
+          <% if current_user && current_user.admin? %>
+              <%= link_to "Edit", edit_question_path(question) %> |
+              <%= link_to "Delete", question_path(question), :method => :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+      </div>
+      <hr>
+  <% end %>
+
+
+</div>

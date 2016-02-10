@@ -1,0 +1,19 @@
+/*
+ *= require jquery-ui
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+.registration {
+    background-color: black;
+    display: block;
+
+}
+.vertical-align {
+  float: none;
+  vertical-align: middle;
+  height: 100px;
+}
+

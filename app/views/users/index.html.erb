@@ -1,0 +1,18 @@
+<h1>Users</h1>
+<div class="row">
+  <% @users.each do |user| %>
+
+<div class="col-xs-3">
+  <div class="vertical-align">
+      <% if user.avatar.file? %>
+          <%= image_tag user.avatar.url(:thumb) %>
+      <% end %>
+
+      <p><%= link_to user.login, :controller => 'users', :action => 'show', :id => user %></p>
+      <p>Country:   <%= user.country %></p>
+  </div>
+</div>
+  <% end %>
+</div>
+
+

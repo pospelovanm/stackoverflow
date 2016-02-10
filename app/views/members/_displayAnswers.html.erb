@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="tab-pane active" id="#userAnswers">
+
+    <h3 style="color: #730E15"><%= @user.login %></h3>
+
+    <% @displayAnswers.each do |answer| %>
+        <div>
+          <p><%= link_to answer.question.title, question_path(answer.question) %></p>
+          <br/>
+        </div>
+    <% end %>
+  </div>
+</div>
